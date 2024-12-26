@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperCarParts - Login</title>
+    <link rel="stylesheet" href="web_login.css">
+</head>
+<body>
+    <div class="container">
+        <img src="https://img.goodfon.com/original/1920x1080/f/2a/ferrari-f430-bugatti-veyron.jpg?d=1" alt="Background Image" class="background-image" />
+        <div class="login-form">
+            <h2>Login to SuperCarParts</h2>
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required /><br /><br />
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required /><br /><br />
+                
+                <label for="pin">PIN:</label>
+                <input type="pin" id="pin" name="pin" required maxlength="4" /><br /><br />
+                
+                <div id="captcha-container">
+                    <label for="captcha">Please complete the CAPTCHA:</label>
+                    <div id="captcha-code" style="font-weight: bold; font-size: 24px;"></div>
+                    <input type="text" id="captcha-input" name="captcha" required />
+                </div>
+                <input type="submit" value="Login" />
+            </form>
+            <p>Don't have an account? <a href="register.html">Create an account to buy car parts now</a></p>
+            <p id="error-message" style=" color: red;"></p>
+        </div>
+    </div>
+
+    <script src="web_login.js"></script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperCarParts</title>
+    <link rel="stylesheet" href="web.css">
+    <style>
+        /* Basic styles for the payment modal */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#car-Parts">Car Parts</a></li>
+                <li><a href="#cart">Cart</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button id="logout-button">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-video-container">
+                <video autoplay loop muted>
+                    <source src="https://videocdn.cdnpk.net/euphony/content/video/partners0986/large_watermarked/BB_16e4b4b7-59b5-43ea-9ef1-a839df7c259c_preview.mp4" type="video/mp4">
+                </video>
+            </div>
+            
+        </section> 
+
+        <section id="car-Parts" class="car-Parts">
+            <h2>Featured Performance Car Parts</h2>
+            <div class="car-grid">
+                <div class="car-card">
+                    <h3>Porsche 911 GT3 RS - Performance Exhaust System</h3>
+                    <img src="https://peron-automotive.co.uk/cdn/shop/files/S-PO_TI_23_with_Adapter_Set.webp?v=1732802328&width=750" alt="Porsche 911 GT3 RS Exhaust">
+                    <ul>
+                        <li>Price: $2,499.99</li>
+                    </ul>
+                    <button class="addToCart" data-name="Porsche 911 GT3 RS - Performance Exhaust System" data-price="2499.99">Add to Cart</button>
+                </div>
+                <div class="car-grid">
+                    <div class="car-card">
+                        <h3>Lamborghini Aventador - Carbon Fiber Body Kit</h3>
+                        <img src="https://ae04.alicdn.com/kf/S855ea48dbd3442ecac2d74c2ee225916F.png" alt="Lamborghini Aventador Body Kit">
+                        <ul>
+                            <li>Price: $5,999.99</li>
+                        </ul>
+                        <button class="addToCart" data-name="Lamborghini Aventador - Carbon Fiber Body Kit" data-price="5999.99">Add to Cart</button>
+                    </div>
+                    
+                    <div class="car-card">
+                        <h3>Nissan GT-R - High-Performance Turbocharger</h3>
+                        <img src="https://img4.dhresource.com/webp/m/0x0/f3/albu/jc/m/21/b59f83ab-fb06-409d-b2f6-ea779cf0fa9d.jpg" alt="Nissan GT-R Turbocharger">
+                        <ul>
+                            <li>Price: $2,999.99</li>
+                        </ul>
+                        <button class="addToCart" data-name="Nissan GT-R - High-Performance Turbocharger" data-price="2999.99">Add to Cart</button>
+                    </div>
+                    
+                    <div class="car-card">
+                        <h3>Ferrari LaFerrari - Carbon Fiber Spoiler</h3>
+                        <img src="https://capristoautomotive.com.au/cdn/shop/files/capristo-carbon-fibre-rear-spoiler-for-ferrari-sf-90-03fe12710001-309825_2048x.jpg?v=1712549705" alt="Ferrari LaFerrari Spoiler">
+                        <ul>
+                            <li>Price: $1,499.99</li>
+                        </ul>
+                        <button class="addToCart" data-name="Ferrari LaFerrari - Carbon Fiber Spoiler" data-price="1499.99">Add to Cart</button>
+                    </div>
+                    
+                    <div class="car-card">
+                        <h3>McLaren Artura - Performance Air Filter</h3>
+                        <img src="https://th.bing.com/th/id/R.6d9753b39742d5aa4fcca4933d574f5b?rik=iYcp%2bI6lQQTzjg&riu=http%3a%2f%2fcarid.com%2fimages%2fpages%2fair-filters%2fspectre-performance-air-filters.jpg&ehk=7z8v0Ce2u7DnQgeuzFrGBsPLPZuzbebEJLA1gFHEco4%3d&risl=&pid=ImgRaw&r=0" alt="McLaren Artura Air Filter">
+                        <ul>
+                            <li>Price: $299.99</li>
+                        </ul>
+                        <button class="addToCart" data-name="McLaren Artura - Performance Air Filter" data-price="299.99">Add to Cart</button>
+                    </div>
+                    
+                    <div class="car-card">
+                        <h3>Ford Mustang Shelby GT500 - Cold Air Intake</h3>
+                        <img src="https://hpsperformanceproducts.com/cdn/shop/products/827-603WB_9cbe6a10-3e6a-4e22-8d05-2d8fe8c3569f_5000x.jpg?v=1593025728" alt="Ford Mustang Shelby GT500 Cold Air Intake">
+                        <ul>
+                            <li>Price: $499.99</li>
+                        </ul>
+                        <button class="addToCart" data-name="Ford Mustang Shelby GT500 - Cold Air Intake" data-price="499.99">Add to Cart</button>
+                    </div>
+                    
+                    <div class="car-card">
+                        <h3>Koenigsegg Jesko - Lightweight Racing Wheels</h3>
+                        <img src="https://brixtonforged.com/wp-content/uploads/2022/08/brixton-forged-koenigsegg-jesko-cm6-rs-14.jpg" alt="Koenigsegg Jesko Racing Wheels">
+                        <ul>
+                            <li>Price: $7,999.99</li>
+                        </ul>
+                        <button class="addToCart" data-name="Koenigsegg Jesko - Lightweight Racing Wheels" data-price="7999.99">Add to Cart</button>
+                    </div>
+                    
+                    <div class="car-card">
+                        <h3>Maserati MC20 - Performance Brake Pads</h3>
+                        <img src="https://www.topeuromachine.com/cdn/shop/files/IMG_8317_1024x1024@2x.jpg?v=1703873836" alt="Maserati MC20 Brake Pads">
+                        <ul>
+                            <li>Price: $399.99</li>
+                        </ul>
+                        <button class="addToCart" data-name="Maserati MC20 - Performance Brake Pads" data-price="399.99">Add to Cart</button>
+                    </div>    
+                </div>
+        </section>
+        <section id="cart" class="cart">
+            <h2>Your Cart</h2>
+            <div class="cart-items" id="cartItems"></div>
+            <div class="cart-summary">
+                <p>Total Items: <span id="totalItems">0</span></p>
+                <p>Total Price: $<span id="totalPrice">0.00</span></p>
+                <button id="purchaseButton">Purchase</button>
+            </div>
+        </section>
+        </div> 
+        <div class="cart-summary">
+            <p>Total Items: <span id="totalItems">0</span></p>
+            <p>Total Price: $<span id="totalPrice">0.00</span></p>
+            <button id="purchaseButton">Purchase</button>
+        </div>  
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 SuperCarParts. All rights reserved.</p>
+    </footer>
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Payment Details</h2>
+            <form id="paymentForm">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" required>
+                <label for="expiryDate">Expiry Date:</label>
+                <input type="text" id="expiryDate" required>
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" required>
+                <button type="submit">Pay with Card</button>
+            </form>
+            <button id="paypalButton">Pay with PayPal</button>
+        </div>
+    </div>
+    <script>
+
+    
+    let cart = [];
+let totalItems = 0;
+let totalPrice = 0;
+
+const cartItemsDiv = document.getElementById("cartItems");
+const totalItemsSpan = document.getElementById("totalItems");
+const totalPriceSpan = document.getElementById("totalPrice");
+const purchaseButton = document.getElementById("purchaseButton");
+const paymentModal = document.getElementById("paymentModal");
+const closeModal = document.getElementsByClassName("close")[0];
+
+document.querySelectorAll('.addToCart').forEach(button => {
+    button.addEventListener('click', () => {
+        const itemName = button.getAttribute('data-name');
+        const itemPrice = parseFloat(button.getAttribute('data-price'));
+
+        // Add item to cart
+        cart.push({ name: itemName, price: itemPrice });
+        totalItems++;
+        totalPrice += itemPrice;
+
+        // Update cart display
+        updateCartDisplay();
+    });
+});
+
+function updateCartDisplay() {
+    // Clear current cart items
+    cartItemsDiv.innerHTML = '';
+
+    // Display each item in the cart
+    cart.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+        cartItemsDiv.appendChild(itemDiv);
+    });
+
+    // Update total items and price
+    totalItemsSpan.textContent = totalItems;
+    totalPriceSpan.textContent = totalPrice.toFixed(2);
+}
+
+// Handle purchase button click
+purchaseButton.addEventListener('click', () => {
+    if (cart.length > 0) {
+        paymentModal.style.display = "block"; // Show payment modal
+    } else {
+        alert("Your cart is empty.");
+    }
+});
+
+// Close modal when the user clicks on <span> (x)
+closeModal.onclick = function() {
+    paymentModal.style.display = "none";
+}
+
+// Handle payment form submission
+document.getElementById("paymentForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+    alert(`Payment successful! Total: $${totalPrice.toFixed(2)}`);
+    // Clear cart
+    cart = [];
+    totalItems = 0;
+    totalPrice = 0;
+    updateCartDisplay();
+    paymentModal.style.display = "none"; // Close modal
+});
+
+// PayPal button functionality (simulated)
+document.getElementById("paypalButton").addEventListener("click", function() {
+    alert(`Redirecting to PayPal for payment of $${totalPrice.toFixed(2)}`);
+    // Here you would redirect to PayPal or integrate PayPal API
+    paymentModal.style.display = "none"; // Close modal
+});
+
+// Logout functionality
+document.getElementById("logout-button").addEventListener("click", function() {
+    // Confirm logout
+    const confirmLogout = confirm("Are you sure you want to log out?");
+    if (confirmLogout) {
+        // Redirect to the login page
+        window.location.href = "web_login.html"; // Change to your login page URL
+    }
+});
+</script> 
+</body>
+</html>

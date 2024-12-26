@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperCarParts - Register</title>
+    <style>
+        /* Add some basic styling to make the form look like a sheet */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://www.gtplanet.net/wp-content/uploads/2019/01/2020-Ford-Mustang-GT500-23.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .register-form {
+            background-color: rgba(255, 253, 253, 0.419); /* transparent background */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(243, 239, 239, 0.601);
+            width: 50%; /* adjust the width to your liking */
+            margin: 40px auto; /* center the form horizontally */
+        }
+        
+        .register-form h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        
+        .register-form label {
+            display: block;
+            margin-bottom: 10px;
+            color: #666;
+        }
+        
+        .register-form input[type="text"], .register-form input[type="email"], .register-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .register-form input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .register-form input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+        
+        .error-message {
+            color: #red;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-form">
+        <h2>Register to SuperCarParts</h2>
+        <form id="register-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required><br><br>
+            <div class="error-message" id="error-message"></div>
+            <input type="submit" value="Register">
+        </form>
+        <p>Already have an account? <a href="login.html">Login now</a></p>
+    </div>
+    
+    <script>
+        const form = document.getElementById('register-form');
+        const errorMessage = document.getElementById('error-message');
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            
+            if (password !== confirmPassword) {
+                errorMessage.textContent = 'Passwords do not match';
+                return;
+            }
+            
+            // TO DO: implement registration logic here
+            // For now, just alert the user that the form has been submitted
+            alert('Form submitted successfully!');
+        });
+    </script>
+</body>
+</html>
